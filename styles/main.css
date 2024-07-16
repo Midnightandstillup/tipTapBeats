@@ -1,0 +1,667 @@
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(245, 245, 245);
+  overflow: hidden;
+}
+p {
+  margin: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+a {
+  color: initial;
+  text-decoration: initial;
+}
+
+header {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: 8%;
+  background-color: rgb(25, 25, 25);
+  z-index: 999;
+}
+  #settingsIcon {
+    position: absolute;
+    right: 5%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    transition: all 0.75s;
+    cursor: pointer;
+  }
+  #settingsIcon:hover {
+    transform: rotate(360deg) scale(75%);
+  }
+  #metronomeIcon {
+    position: absolute;
+    right: 15%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    transition: all 0.75s;
+    cursor: pointer;
+  }
+  #metronomeIcon:hover {
+    transform: scale(75%);
+  }
+    .metronomeActive {
+      background-color: rgba(50, 250, 50, 0.5);
+    }
+    #beat1 {
+      position: absolute;
+      right: 40%;
+      height: 50%;
+      margin-top: 0.80%;
+      aspect-ratio: 1 / 1;
+      transition: all 0.5s;
+      background-color: rgb(255, 0, 0);
+      transform: scale(115%) rotate(45deg);
+      animation: beatIn 0.2s ease-out 0s 1 forwards;
+    }
+    #beat2 {
+      position: absolute;
+      right: 35%;
+      height: 50%;
+      margin-top: 0.80%;
+      aspect-ratio: 1 / 1;
+      transition: all 0.5s;
+      background-color: rgb(255, 0, 0);
+      transform: scale(115%) rotate(45deg);
+      animation: beatIn 0.2s ease-out 0s 1 forwards;
+    }
+    #beat3 {
+      position: absolute;
+      right: 30%;
+      height: 50%;
+      margin-top: 0.80%;
+      aspect-ratio: 1 / 1;
+      transition: all 0.5s;
+      background-color: rgb(255, 0, 0);
+      transform: scale(115%) rotate(45deg);
+      animation: beatIn 0.2s ease-out 0s 1 forwards;
+    }
+    #beat4 {
+      position: absolute;
+      right: 25%;
+      height: 50%;
+      margin-top: 0.80%;
+      aspect-ratio: 1 / 1;
+      transition: all 0.5s;
+      background-color: rgb(0, 255, 0);
+      transform: scale(115%) rotate(45deg);
+      animation: beatIn 0.2s ease-out 0s 1 forwards;
+    }
+      @keyframes beatIn {
+        to {
+          transform: scale(100%) rotate(0deg);
+        }
+      }
+
+main {
+  position: absolute;
+  left: 0%;
+  top: 7.5%;
+  width: 100%;
+  height: 82.5%;
+  background-color: rgb(25, 25, 25);
+  overflow: hidden auto;
+}
+  #beatBox {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+  }
+
+    .beatBox_kick {
+      position: absolute;
+      bottom: 0%;
+      left: 50%;
+      height: 0%;
+      transform: translateX(-50%);
+    }
+    .beatBox_snare {
+      position: absolute;
+      bottom: 0%;
+      left: 0%;
+      width: 0%;
+      /* transform: translateX(-50%); */
+    }
+    .beatBox_hiHat {
+      position: absolute;
+      bottom: 0%;
+      right: 0%;
+      width: 0%;
+      /* transform: translateX(-50%); */
+    }
+    .beatBox_cowbell {
+      position: absolute;
+      top: 25%;
+      left: 0%;
+      width: 0%;
+      /* transform: translateX(-50%); */
+    }
+    .beatBox_highTom {
+      position: absolute;
+      top: 25%;
+      right: 0%;
+      width: 0%;
+      /* transform: translateX(-50%); */
+    }
+    .beatBox_midTom {
+      position: absolute;
+      top: 25%;
+      right: 0%;
+      width: 0%;
+      /* transform: translateX(-50%); */
+    }
+    .beatBox_lowTom {
+      position: absolute;
+      top: 25%;
+      right: 0%;
+      width: 0%;
+      /* transform: translateX(-50%); */
+    }
+
+
+  #backgroundForSettingsMenu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: rgba(25, 25, 25, 0.75);
+  }
+    #settingsMenu { 
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 65vw;
+      aspect-ratio: 3 / 2;
+      background-color: rgb(45, 45, 45);
+      border-radius: 1vw;
+      overflow-y: auto;
+    }
+      #settingsMenuCloseButton {
+        position: absolute;
+        top: 1vw;
+        right: 1vw;
+        width: 4vw;
+        aspect-ratio: 1 / 1;
+        transition: all 0.5s;
+        border: 0.25vw solid transparent;
+        border-radius: 1vw;
+        z-index: 999;
+      }
+      #settingsMenuCloseButton:hover {
+        border: 0.25vw solid rgb(240, 240, 240);
+      }
+      .settingsMenu_title {
+        position: relative;
+        margin-top: 5%;
+        left: 50%;
+        font-size: 3vw;
+        text-decoration: underline;
+        text-align: center;
+        transform: translateX(-50%);
+      }
+      .settingsMenu_generalSettingsTitle {
+        position: relative;
+        margin-top: 5%;
+        left: 50%;
+        font-size: 2vw;
+        text-decoration: underline;
+        text-align: center;
+        transform: translateX(-50%);
+      }
+      .settingsmenu_optionsContainer {
+        position: relative;
+        width: 90%;
+        height: fit-content;
+        margin: 5%;
+      }
+      .optionWrapper {
+        position: relative;
+        margin-top: 2.5%;
+        display: flex; 
+        justify-content: center; 
+        width: 100%;
+        font-size: 1.5vw;
+      }
+        #themeSelect {
+          margin-left: 2%;
+          font-size: 1.5vw;
+          padding: 0.1%;
+          transform: translateY(-17.5%);
+        }
+        #drumsetSelect {
+          margin-left: 2%;
+          font-size: 1.5vw;
+          padding: 0.1%;
+          transform: translateY(-17.5%);
+        }
+        #metronomeSoundSelect {
+          margin-left: 2%;
+          font-size: 1.5vw;
+          padding: 0.1%;
+          transform: translateY(-17.5%);
+        }
+footer {
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  width: 100%;
+  height: 10%;
+  background-color: rgb(25, 25, 25);
+  z-index: 999;
+}
+  .copyright {
+    text-align: center;
+    font-size: 2vh;
+    font-weight: bold;
+    position: absolute;
+    left: 2.5%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .githubLinkImage {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5%;
+    height: 75%;
+    aspect-ratio: 1 / 1;
+    transition: all 0.5s;
+  }
+  .githubLinkImage:hover {
+    transform: translateY(-50%) scale(110%);
+  }
+
+
+
+
+
+
+
+
+
+
+
+.slideBack_y {
+  animation: slideBack_x 1s ease-in-out 0s 1 forwards; 
+}
+  @keyframes slideBack_x {
+    to {
+      height: 0%;
+    }
+  }
+
+.slideBack_x {
+  animation: slideBack_y 1s ease-in-out 0s 1 forwards; 
+}
+  @keyframes slideBack_y {
+    to {
+      width: 0%;
+    }
+  }
+
+
+
+
+
+
+
+
+
+.solid .kick1 {
+  background-color: rgb(255, 0, 0);
+  width: 25%;
+  z-index: 10;
+}
+.solid .kick2 {
+  background-color: rgb(235, 0, 0);
+  width: 25%;
+  z-index: 9;
+}
+.solid .kick3 {
+  background-color: rgb(215, 0, 0);
+  width: 25%;
+  z-index: 8;
+}
+
+.solid .snare1 {
+  background-color: rgb(0, 255, 0);
+  height: 25%;
+  z-index: 10;
+}
+.solid .snare2 {
+  background-color: rgb(0, 235, 0);
+  height: 25%;
+  z-index: 9;
+}
+.solid .snare3 {
+  background-color: rgb(0, 215, 0);
+  height: 25%;
+  z-index: 8;
+}
+
+.solid .hiHat1 {
+  background-color: rgb(0, 0, 255);
+  height: 25%;
+  z-index: 10;
+}
+.solid .hiHat2 {
+  background-color: rgb(0, 0, 235);
+  height: 25%;
+  z-index: 9;
+}
+.solid .hiHat3 {
+  background-color: rgb(0, 0, 215);
+  height: 25%;
+  z-index: 8;
+}
+
+.solid .cowbell1 {
+  background-color: rgb(255, 255, 0);
+  height: 25%;
+  z-index: 10;
+}
+.solid .cowbell2 {
+  background-color: rgb(235, 235, 0);
+  height: 25%;
+  z-index: 9;
+}
+.solid .cowbell3 {
+  background-color: rgb(215, 215, 0);
+  height: 25%;
+  z-index: 8;
+}
+.solid .highTom1 {
+  background-color: rgb(255, 0, 255);
+  height: 25%;
+  z-index: 10;
+}
+.solid .highTom2 {
+  background-color: rgb(235, 0, 235);
+  height: 25%;
+  z-index: 9;
+}
+.solid .highTom3 {
+  background-color: rgb(215, 0, 215);
+  height: 25%;
+  z-index: 8;
+}
+.solid .midTom1 {
+  background-color: rgb(195, 0, 195);
+  height: 25%;
+  z-index: 7;
+}
+.solid .midTom2 {
+  background-color: rgb(175, 0, 175);
+  height: 25%;
+  z-index: 6;
+}
+.solid .midTom3 {
+  background-color: rgb(155, 0, 155);
+  height: 25%;
+  z-index: 5;
+}
+.solid .lowTom1 {
+  background-color: rgb(135, 0, 135);
+  height: 25%;
+  z-index: 4;
+}
+.solid .lowTom2 {
+  background-color: rgb(115, 0, 115);
+  height: 25%;
+  z-index: 3;
+}
+.solid .lowTom3 {
+  background-color: rgb(95, 0, 95);
+  height: 25%;
+  z-index: 2;
+}
+
+
+
+.border .kick1 {
+  background-color: transparent;
+  width: 25%;
+  border: 0.25vw solid rgb(255, 0, 0);
+  z-index: 10;
+}
+.border .kick2 {
+  background-color: transparent;
+  width: 25%;
+  border: 0.25vw solid rgb(235, 0, 0);
+  z-index: 9;
+}
+.border .kick3 {
+  background-color: transparent;
+  width: 25%;
+  border: 0.25vw solid rgb(215, 0, 0);
+  z-index: 8;
+}
+
+.border .snare1 {
+  background-color: transparent;
+  height: 25%;
+  border: 0.25vw solid rgb(0, 255, 0);
+  z-index: 10;
+}
+.border .snare2 {
+  background-color: transparent;
+  height: 25%;
+  border: 0.25vw solid rgb(0, 235, 0);
+  z-index: 9;
+}
+.border .snare3 {
+  background-color: transparent;
+  height: 25%;
+  border: 0.25vw solid rgb(0, 215, 0);
+  z-index: 8;
+}
+
+.border .hiHat1 {
+  background-color: transparent;
+  height: 25%;
+  border: 0.25vw solid rgb(0, 0, 255);
+  z-index: 10;
+}
+.border .hiHat2 {
+  background-color: transparent;
+  height: 25%;
+  border: 0.25vw solid rgb(0, 0, 225);
+  z-index: 9;
+}
+.border .hiHat3 {
+  background-color: transparent;
+  height: 25%;
+  border: 0.25vw solid rgb(0, 0, 215);
+  z-index: 8;
+}
+
+.border .cowbell1 {
+  background-color: transparent;
+  height: 25%;
+  border: 0.25vw solid rgb(255, 255, 0);
+  z-index: 10;
+}
+.border .cowbell2 {
+  background-color: transparent;
+  height: 25%;
+  border: 0.25vw solid rgb(235, 235, 0);
+  z-index: 9;
+}
+.border .cowbell3 {
+  background-color: transparent;
+  height: 25%;
+  border: 0.25vw solid rgb(215, 215, 0);
+  z-index: 8;
+}
+.border .highTom1 {
+  background-color: transparent;
+  height: 25%;
+  border: 0.25vw solid rgb(255, 0, 255);
+}
+.border .highTom2 {
+  background-color: transparent;
+  height: 25%;
+  border: 0.25vw solid rgb(235, 0, 235);
+}
+.border .highTom3 {
+  background-color: transparent;
+  height: 25%;
+  border: 0.25vw solid rgb(215, 0, 215);
+}
+.border .midTom1 {
+  background-color: transparent;
+  height: 25%;
+  border: 0.25vw solid rgb(195, 0, 195);
+}
+.border .midTom2 {
+  background-color: transparent;
+  height: 25%;
+  border: 0.25vw solid rgb(175, 0, 175);
+}
+.border .midTom3 {
+  background-color: transparent;
+  height: 25%;
+  border: 0.25vw solid rgb(155, 0, 155);
+  z-index: 7;
+}
+.border .lowTom1 {
+  background-color: transparent;
+  height: 25%;
+  border: 0.25vw solid rgb(135, 0, 135);
+  z-index: 6;
+}
+.border .lowTom2 {
+  background-color: transparent;
+  height: 25%;
+  border: 0.25vw solid rgb(115, 0, 115);
+  z-index: 5;
+}
+.border .lowTom3 {
+  background-color: transparent;
+  height: 25%;
+  border: 0.25vw solid rgb(95, 0, 95);
+  z-index: 4;
+}
+
+
+
+.darkerBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(25, 25, 25, 0.75);
+  z-index: 999;
+}
+#showHowToUseElement {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  aspect-ratio: 2 / 1;
+  width: 80%;
+  background-color: rgb(50, 50, 50);
+  border-radius: 2vw;
+}
+  .showHowToUse_title {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 3vw;
+    text-decoration: underline;
+    /* font-weight: bold; */
+    margin-top: 2%;
+  }
+  .showHowToUse_keybindsTitle {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 2vw;
+    text-decoration: underline;
+    margin-top: 2.5%;
+  }
+    .showHowToUse_keybindsList {
+      position: relative;
+      width: 80%;
+      padding: 0 5%;
+      font-size: 1.5vw;
+      pointer-events: none;
+      text-align: center;
+      margin:  2.5% auto 0 auto;
+    }
+      .showHowToUse_keybindsList li {
+        text-align: center;
+        list-style-position: inside;
+        list-style-type: square;
+        margin-bottom: 1%;
+      }
+  .showHowToUse_settingsText {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-top: 2%;
+    font-size: 1.70vw;
+  }
+  #showHowToUse_okGotItButton {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20%;
+    aspect-ratio: 3 / 1;
+    background-color: rgb(75, 75, 75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+    border-radius: 2vw;
+  }
+  #showHowToUse_okGotItButton:hover {
+    color: rgb(75, 75, 75);
+    background-color: rgb(245, 245, 245);
+  }
+    #showHowToUse_okGotItButton p {
+      font-size: 2vw;
+    }
+
+#wrongScreenAspectRatioElement {
+  position: fixed;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  background-color: rgb(25, 25, 25);
+}
+  .wrongScreenAspectRatioElement_firstText {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 10vw;
+  }
+  .wrongScreenAspectRatioElement_lastText {
+    position: relative;
+    width: 90%;
+    text-align: center;
+    font-size: 5vw;
+    padding: 0 5% 0 5%;
+  }
